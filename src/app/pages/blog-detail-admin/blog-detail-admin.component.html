@@ -1,0 +1,43 @@
+<app-top-menu></app-top-menu>
+<main class="container">
+    <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+        <!-- <img class="bd-placeholder-img" width="100%" height="250"
+            [src]="blog.image!= null ? 'https://ngx-training.com'+blog.image?.url : '../assets/images/no-image.png'"
+            alt="{{blog.image?.name}}"> -->
+    </div>
+</main>
+<form [formGroup]="updateForm" (ngSubmit)="onSubmit()" novalidate>
+    <main class="container">
+        <div class="row g-5">
+            <div class="col-md-12">
+                <div class="my-3">
+                    <label for="">Description</label>
+                    <h3 class="pb-4 mb-4 fst-italic border-bottom">
+                        <input type="text" formControlName="blogDescription">
+                    </h3>
+                </div>
+                <article class="blog-post">
+                    <div class="my-3">
+                        <label for="">Title</label>
+                        <h2 class="blog-post-title">
+                            <input type="text" formControlName="blogTitle" [style]="{'width':'100%'}">
+                        </h2>
+                    </div>
+                    <div class="my-3">
+                        <label for="">Published</label><br>
+                        <p-calendar formControlName="blogPublished"></p-calendar>
+                    </div>
+                    <div class="my-3">
+                        <label for="">Content</label>
+                        <p>
+                            <textarea formControlName="blogContent" [style]="{'height':'320px','width':'100%'}"
+                                class="w-100"></textarea>
+                        </p>
+                    </div>
+                    <button *ngIf="blogId" type="submit" class="btn btn-sm btn-outline-secondary w-25">Update</button>
+                    <button *ngIf="blogId==undefined" class="btn btn-sm btn-outline-secondary w-25">Create</button>
+                </article>
+            </div>
+        </div>
+    </main>
+</form>

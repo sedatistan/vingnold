@@ -1,0 +1,17 @@
+<div class="container">
+    <header class="blog-header py-3">
+        <div class="row flex-nowrap justify-content-between align-items-center">
+            <div class="col-4 pt-1">
+                <a class="link-secondary" href="#"><img src="../assets/images/logo.png" alt="logo" width="100"></a>
+            </div>
+            <div class="col-4 pt-1 text-center">
+                <span  *ngIf="!signed" class="link-secondary  f-bold">USER AREA</span>
+                <span  *ngIf="signed" class="link-secondary text-danger f-bold">ADMIN AREA</span>
+            </div>
+            <div class="col-4 d-flex justify-content-end align-items-center">
+                <a *ngIf="!signed" class="btn btn-sm btn-outline-secondary" (click)="routerLink()">Signin</a> 
+                <a *ngIf="signed" class="btn btn-sm btn-outline-secondary" (click)="logout()">Logout</a>
+            </div>
+        </div>
+    </header>
+</div>
